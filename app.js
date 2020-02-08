@@ -87,5 +87,5 @@ app.use(UserRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("The SpendThrift server has started!!!!");
+  console.log("The TechnoArena server has started!!!!");
 });
