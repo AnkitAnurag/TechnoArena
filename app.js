@@ -86,6 +86,6 @@ app.use(UserRoutes);
 
 
 
-app.listen(3000, function(req, res){
-	console.log("Website Started!");
+app.listen(process.env.PORT || 3000, () => {
+  console.log("The SpendThrift server has started!!!!");
 });
