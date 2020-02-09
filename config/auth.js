@@ -5,9 +5,9 @@ module.exports = {
 		'callbackURL': 'https://morning-woodland-26031.herokuapp.com/auth/facebook/callback'
 	},
 
-	// 'googleAuth' : {
-	// 	'clientID': 'enter client id here',
-	// 	'clientSecret': 'enter client secret here',
-	// 	'callbackURL': 'enter callback here'
-	// }
+	'googleAuth' : {
+		'clientID': '1025068364951-lnk2pno0i0qp4e2qobj7d7h96u074kan.apps.googleusercontent.com',
+		'clientSecret': '7zDpEzx8LH4s5DNMcJV-TYSr',
+		'callbackURL': 'https://morning-woodland-26031.herokuapp.com/auth/google/callback'
+	}
 }
