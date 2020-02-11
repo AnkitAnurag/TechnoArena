@@ -107,8 +107,8 @@ module.exports = function(passport) {
   ));
 
   passport.use(new TwitterStrategy({
-    consumerKey: configAuth.twitterAuth.clientID,
-    consumerSecret: configAuth.twitterAuth.clientSecret,
+    consumerKey: configAuth.twitterAuth.consumerKey,
+    consumerSecret: configAuth.twitterAuth.consumerSecret,
     callbackURL: configAuth.twitterAuth.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
