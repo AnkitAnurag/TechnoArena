@@ -90,6 +90,7 @@ html {
   #recentdesc:before {
     content: '...';
     position: absolute;
+	  margin-right:0px;
     right: 0;
     bottom: 0;
   }
@@ -99,6 +100,7 @@ html {
     right: 0;
     width: 1em;
     height: 1em;
+	  margin-right:0px;
     margin-top: 0.2em;
     background: white;
   }
@@ -145,3 +147,238 @@ html {
   .img__wrap:hover .img__description {
     transform: translateY(0);
   }
+
+@viewport{
+	zoom:1.0;
+	width:extend-to-zoom;
+}
+
+@media only screen and (min-width: 360px){
+	.img__wrap {
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 250px;
+  }
+	.jumbotron .container {
+    max-width: 100%;
+    margin-left: -5px;
+}
+	.img__wrap img{
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 250px;
+  }
+	
+	.recentimages{
+    height: 80px;
+    width: 110px;
+  }
+	
+	.content{
+    height: 190px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.527);
+    margin-bottom: 20px;
+    border-left:5px solid #000000;
+  }
+	strong{
+		display: inline-block;
+  		width: 140px;
+  		height: 70px;
+		font-size:17px;
+		line-height:1.0;
+	}
+	
+	p.date{
+		display:block;
+	}
+	
+	p#recentdesc {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height:55px;
+    text-align: justify;
+    margin-top: -10px;
+    margin-right: 2px;
+    padding-right: 1em;
+		font-size:15px;
+  }
+	
+}
+@media only screen and (min-width: 411px){
+	.img__wrap {
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 250px;
+  }
+	.jumbotron .container {
+    max-width: 100%;
+    margin-left: 20px;
+}
+	.img__wrap img{
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 250px;
+  }
+	
+	.recentimages{
+    height: 80px;
+    width: 110px;
+  }
+	
+	.content{
+    height: 190px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.527);
+    margin-bottom: 20px;
+    border-left:5px solid #000000;
+  }
+	strong{
+		display: inline-block;
+  		width: 140px;
+  		height: 70px;
+		font-size:20px;
+		line-height:1.0;
+	}
+	
+	p.date{
+		display:block;
+	}
+	
+	p#recentdesc {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height:55px;
+    text-align: justify;
+    margin-top: -10px;
+    margin-right: 2px;
+    padding-right: 1em;
+		font-size:15px;
+  }
+	
+}
+
+@media only screen and (min-width: 1000px){
+	.img__wrap {
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 230px;
+  }
+	.img__wrap img{
+    display: inline-flex;
+    position: relative;
+    height: 200px;
+    width: 230px;
+  }
+	.jumbotron .container {
+    max-width: 100%;
+    margin-left: 25px;
+}
+	
+	.recentimages{
+    height: 80px;
+    width: 110px;
+  }
+	
+	.content{
+    height: 190px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.527);
+    margin-bottom: 20px;
+    border-left:5px solid #000000;
+  }
+	strong{
+		display: inline-block;
+  		width: 660px;
+  		height: 30px;
+		font-size:25px;
+		line-height:1.0;
+	}
+	
+	p.date{
+		display:block;
+	}
+	
+	p#recentdesc {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height:69px;
+    text-align: justify;
+    margin-top: 20px;
+    margin-right: 2px;
+    padding-right: 1em;
+		font-size:19px;
+  }
+	.btn{
+		margin-top:10px;
+	}
+	
+}
+
+@media only screen and (min-width: 1240px){
+	.img__wrap {
+    display: inline-flex;
+    position: relative;
+    height: 260px;
+    width: 310px;
+  }
+	.img__wrap img{
+    display: inline-flex;
+    position: relative;
+    height: 260px;
+    width: 310px;
+  }
+	.jumbotron .container {
+    max-width: 100%;
+    margin-left: 0px;
+}
+	
+	.recentimages{
+    height: 80px;
+    width: 110px;
+  }
+	
+	.content{
+    height: 190px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.527);
+    margin-bottom: 20px;
+    border-left:5px solid #000000;
+  }
+	strong{
+		display: inline-block;
+  		width: 660px;
+  		height: 30px;
+		font-size:25px;
+		line-height:1.0;
+	}
+	
+	p.date{
+		display:block;
+	}
+	
+	p#recentdesc {
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height:69px;
+    text-align: justify;
+    margin-top: 20px;
+    margin-right: 2px;
+    padding-right: 1em;
+		font-size:19px;
+  }
+	.btn{
+		margin-top:10px;
+	}
+	
+	
+}

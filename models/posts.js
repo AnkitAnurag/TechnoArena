@@ -5,21 +5,17 @@ const PostsSchema = new mongoose.Schema({
   name: {
     type: String,
   },
-  image: {
-    work: mongoose.SchemaTypes.Url,
-    profile: mongoose.SchemaTypes.Url
+  image:{
+	  type:String,
   },
-  type: {
+  source: {
     type: String,
   },
   description: {
     type: String,
   },
-  filtertype: {
-    type: String,
-  },
   date: {
-    type: Date,
+    type: String,
     default: Date.now
   }
 });

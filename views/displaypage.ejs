@@ -1,0 +1,27 @@
+<%- include("partials/displaynewsheader") %>
+<%- include("partials/messages") %>
+
+
+<div class="container">
+	<div class = "row"  >
+		<div class="col-md-9" style="margin:auto;">
+			<div class="thumbnail"  >
+				<img class="img-responsive" src="<%=posts.image%>" style="width:1000px; height:auto; padding:10px;">
+				<div class="container">
+				<div class="caption-full" style="margin-left:auto;">
+					<h4 style="font-size:30px;"><a><%=posts.name%></a></h4>
+					<h4 class="pull-right" style="margin-top:-20px;"><em>Created on: <%=posts.date%></em></h4>
+					<p style="font-size:17px;">
+						<em>Source: <%=posts.source%></em>
+					</p>
+					<p style="font-size:15px;"><%=posts.description%></p>
+					
+				</div>
+				</div>
+			</div>
+        </div>
+        
+	</div>	
+</div>
+
+<%- include("partials/footer") %>

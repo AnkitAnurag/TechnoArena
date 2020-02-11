@@ -9,6 +9,7 @@ var LocalStrategy = require("passport-local");
 var methodOverride = require('method-override');
 var ejsLint = require('ejs-lint');
 var session = require('express-session');
+var moment = require('moment');
 
 
 var indexRoutes = require("./routes/index");

@@ -1,0 +1,43 @@
+html{
+	min-height:100%;
+}
+body{
+	height: auto;
+    background: #009FFF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #FC5C7D, #6A82FB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #FC5C7D, #6A82FB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-roboto {
+  font-family: "Roboto", serif;
+}
+
+.w3-pacifico {
+  font-family: "Pacifico", serif;
+}
+
+.navbar-brand {
+	color: #ffffff  !important;
+  margin-left: 20px;	
+  padding: 2px 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.navbar-nav{
+	margin-right: 7%;
+	font-size: 15px;
+}
+
+.nav-item{
+	margin-right: 7px;
+	margin-left: 7px;
+}
+
+#navitem{
+	color: #000000;
+}

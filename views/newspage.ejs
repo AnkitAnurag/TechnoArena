@@ -1,0 +1,39 @@
+<%- include("partials/newsheader") %>
+<div class="container newssection">
+  <div class="jumbotron jumbotron-fluid">
+    <h2 class="display-2" style="color:#000000; margin-top:-10px;">Latest News</h2>
+    <div class="container">
+        <div class="row" style="margin-top: 30px; margin-left: auto;">
+            <div class="col-lg-12 ">
+            <% for(var i=0; i<posts.length ; i++){ %>
+            <%if(i<6){%>
+            <div class="img__wrap" style="margin-top:-20px;">
+                <img src="<%=posts[i].image%>" class="image">
+                <div class="img__description_layer">
+                <p class="img__description"><a href="/newspage/<%=posts[i]._id%>" id="toDisplay"><%=posts[i].name%></a></p>
+                </div>
+            </div>
+            <%}%>
+            <%}%>  
+            </div>
+        </div>
+      </div>
+    </div>
+    <h2 style="color: #FFFFFF; font-size: 40px; font-weight: bold; margin-top: 50px; margin-bottom:15px;">Recent News</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <% for(var i=3; i<posts.length ; i++){%>
+                <div class="content">
+                    <img src="<%=posts[i].image%>" class="recentimages" style="float:left; margin-right:20px; margin-top: auto;">
+                        <h3 style="color: black; font-size: 30px;"><strong><%=posts[i].name%></strong></h3> 
+                        <p style="color: black; font-size: 13px;" class="date">Created on <i><%=posts[i].date%></i></p>
+                        <p style="color: black;" id="recentdesc"><%=posts[i].description%></p>
+                        <a class="btn btn-danger" style=" margin-top: -10px;" href="/newspage/<%=posts[i]._id%>">Read more</a>
+                    </div>
+            <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("partials/newsfooter") %>
