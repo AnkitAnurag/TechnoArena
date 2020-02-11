@@ -43,7 +43,7 @@ router.post("/latestnews",isLoggedIn,function(req, res){
 	else{
 		console.log("Blog added succesfully!")	
 		console.log(newlyobj);
-		res.redirect("/newspage");
+		res.redirect("/news");
 	}
 	});
 });
