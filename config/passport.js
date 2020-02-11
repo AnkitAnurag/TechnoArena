@@ -2,6 +2,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var TwitterStrategy = require('passport-twitter').Strategy;
 
 // Load User model
 const User = require('../models/User');
@@ -103,7 +104,37 @@ module.exports = function(passport) {
         });
       });
     }
+  ));
 
+  passport.use(new TwitterStrategy({
+    clientID: configAuth.twitterAuth.clientID,
+    clientSecret: configAuth.twitterAuth.clientSecret,
+    callbackURL: configAuth.twitterAuth.callbackURL
+  },
+  function(accessToken, refreshToken, profile, done) {
+      process.nextTick(function(){
+        User.findOne({'twitter.id': profile.id}, function(err, user){
+          if(err)
+            return done(err);
+          if(user)
+            return done(null, user);
+          else {
+            var newUser = new User();
+            newUser.twitter.id = profile.id;
+            newUser.twitter.token = accessToken;
+            newUser.twitter.name = profile.displayName;
+            newUser.twitter.email = profile.emails[0].value;
+
+            newUser.save(function(err){
+              if(err)
+                throw err;
+              return done(null, newUser);
+            })
+            console.log(profile);
+          }
+        });
+      });
+    }
   ));
 
 };
