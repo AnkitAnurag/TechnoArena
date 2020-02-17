@@ -84,6 +84,18 @@ app.use(function(req, res, next) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
   }
+  gapi.load('auth2', function() {
+    auth2 = gapi.auth2.init({
+      client_id: 'CLIENT_ID.apps.googleusercontent.com',
+      fetch_basic_profile: false,
+      scope: 'profile'
+    });
+  
+    // Sign the user in, and then retrieve their ID.
+    auth2.signIn().then(function() {
+      console.log(auth2.currentUser.get().getId());
+    });
+  });
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
