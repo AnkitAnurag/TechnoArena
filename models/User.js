@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  local: {
+  // local: {
     name: {
     type: String
     // required: true
@@ -17,8 +17,8 @@ const UserSchema = new mongoose.Schema({
     date: {
     type: Date,
     default: Date.now
-    }
-  },
+    },
+  // },
   facebook: {
 		id: String,
 		token: String,
