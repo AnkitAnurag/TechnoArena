@@ -25,7 +25,7 @@ router.get("/aboutus", function(req, res){
 
 //ADD NEWS
 
-router.get("/latestnews/new",isLoggedIn,function(req,res){
+router.get("/latestnews/new",function(req,res){
 	res.render("addnews", {moment: moment});
 });
 router.post("/latestnews",isLoggedIn,function(req, res){
