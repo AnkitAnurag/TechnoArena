@@ -64,13 +64,12 @@ router.get("/news",function(req,res){
 
 
 router.get("/news/:id",function(req,res){
-	Posts.findById(req.params.id,function(err,posts){
-		if(err){
-			console.log(err);
-		}else{
-			console.log(posts);
-			res.render("displaypage",{posts:posts});
-		}
+	Promise.all([
+		Posts.findById(req.params.id),
+		Posts.find({})
+	]).then(([posts,news])=>{
+		console.log("Posts=====>"+posts+"News =====>"+news);
+		res.render("displaypage",{posts:posts,news:news})
 	});
 });
 
