@@ -15,6 +15,8 @@ var moment = require('moment');
 var indexRoutes = require("./routes/index");
 var UserRoutes = require("./routes/users");
 
+const Posts = require('./models/posts');
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.urlencoded({ extended: true }));
