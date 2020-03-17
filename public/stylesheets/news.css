@@ -199,7 +199,7 @@ html {
     overflow: hidden;
     position: relative;
     line-height: 1.2em;
-    max-height:55px;
+    max-height:38px;
     text-align: justify;
     margin-top: -10px;
     margin-right: 2px;
@@ -240,7 +240,7 @@ html {
   }
 	strong{
 		display: inline-block;
-  		width: 140px;
+  		width: 190px;
   		height: 70px;
 		font-size:20px;
 		line-height:1.0;
@@ -254,7 +254,7 @@ html {
     overflow: hidden;
     position: relative;
     line-height: 1.2em;
-    max-height:55px;
+    max-height:38px;
     text-align: justify;
     margin-top: -10px;
     margin-right: 2px;
@@ -312,7 +312,7 @@ html {
     line-height: 1.2em;
     max-height:69px;
     text-align: justify;
-    margin-top: 20px;
+    margin-top: -05px;
     margin-right: 2px;
     padding-right: 1em;
 		font-size:19px;
@@ -371,7 +371,7 @@ html {
     line-height: 1.2em;
     max-height:69px;
     text-align: justify;
-    margin-top: 20px;
+    margin-top: -05px;
     margin-right: 2px;
     padding-right: 1em;
 		font-size:19px;
