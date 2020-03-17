@@ -78,6 +78,7 @@ app.use(flash());
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
   if(res.locals.currentUser){
+    var auth2 = gapi.auth2.init();
     if (auth2.isSignedIn.get()) {
       var profile = auth2.currentUser.get().getBasicProfile();
       console.log('ID: ' + profile.getId());
