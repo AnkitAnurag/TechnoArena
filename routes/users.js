@@ -94,13 +94,7 @@ router.get('/auth/google', passport.authenticate('google', {scope: ['profile', '
 
 router.get('/auth/google/callback', 
     passport.authenticate('google', { successRedirect: '/aboutus',
-                                      failureRedirect: '/login' }));
-
-// router.get('/auth/twitter', passport.authenticate('google', {scope: 'email'}));
-
-// router.get('/auth/twitter/callback', 
-//     passport.authenticate('twitter', { successRedirect: '/aboutus',
-//                                       failureRedirect: '/login' }));                                    
+                                      failureRedirect: '/login' }));                                 
 
 // Logout
 router.get('/logout', (req, res) => {
