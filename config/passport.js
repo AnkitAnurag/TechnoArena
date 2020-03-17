@@ -60,6 +60,7 @@ module.exports = function(passport) {
             newUser.facebook.id = profile.id;
             newUser.facebook.token = accessToken;
             newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
+            console.log(newUser.facebook.name);
             // newUser.facebook.email = profile.emails[0].value;
             newUser.facebook.email = profile.email;
             
@@ -92,6 +93,7 @@ module.exports = function(passport) {
             newUser.google.id = profile.id;
             newUser.google.token = accessToken;
             newUser.google.name = profile.displayName;
+            console.log(newUser.google.name);
             newUser.google.email = profile.emails[0].value;
 
             newUser.save(function(err){
