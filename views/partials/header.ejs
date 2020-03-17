@@ -29,12 +29,7 @@
       <% if(!currentUser){ %>
         <a class="nav-item nav-link" id="navitem" href="/login">Login</a>
         <% } else { %>
-        <a class="nav-item nav-link" id="navitem" href="#">Logged In As 
-         <% if (auth2.isSignedIn.get()) { %>
-            <%= auth2.currentUser.get().getBasicProfile().profile.getName(); %>
-            <!-- console.log('Full Name: ' + profile.getName());
-            console.log('Given Name: ' + profile.getGivenName()); -->
-          <% } else { currentUser.name } %></a>
+        <a class="nav-item nav-link" id="navitem" href="#">Logged In As <%= currentUser.name %></a>
         <a class="nav-item nav-link" id="navitem" href="/logout">Logout</a>
         <% } %>
       </div>
