@@ -77,13 +77,6 @@ app.use(flash());
 // Global variables
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  next();
-});
-
-if(!currentUser){
   if (auth2.isSignedIn.get()) {
     var profile = auth2.currentUser.get().getBasicProfile();
     console.log('ID: ' + profile.getId());
@@ -93,7 +86,23 @@ if(!currentUser){
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail());
   }
-}
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
+// if(!res.locals.currentUser){
+//   if (auth2.isSignedIn.get()) {
+//     var profile = auth2.currentUser.get().getBasicProfile();
+//     console.log('ID: ' + profile.getId());
+//     console.log('Full Name: ' + profile.getName());
+//     console.log('Given Name: ' + profile.getGivenName());
+//     console.log('Family Name: ' + profile.getFamilyName());
+//     console.log('Image URL: ' + profile.getImageUrl());
+//     console.log('Email: ' + profile.getEmail());
+//   }
+// }
 
 
 app.use(indexRoutes);
