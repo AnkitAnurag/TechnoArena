@@ -85,9 +85,8 @@ module.exports = function(passport) {
         User.findOne({'google.id': profile.id}, function(err, user){
           if(err)
             return done(err);
-          if(user){
-            console.log(user.google.name);
-            return done(null, user);}
+          if(user)
+            return done(null, user);
           else {
             var newUser = new User();
             newUser.google.id = profile.id;
