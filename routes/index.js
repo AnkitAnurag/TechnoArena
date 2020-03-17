@@ -13,19 +13,6 @@ router.get("/aboutus", function(req, res){
 	res.render("aboutus");
 });
 
-// router.get("/news", function(req, res){
-// 	Posts.find({}, function(err, allPosts){
-// 		if(err){
-// 			console.log(err);
-// 		}
-// 		else {
-// 			res.render("news", {posts : allPosts});
-// 		}
-// 	})
-// });
-
-//ADD NEWS
-
 router.get("/latestnews/new",function(req,res){
 	res.render("addnews", {moment: moment});
 });

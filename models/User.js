@@ -31,12 +31,6 @@ const UserSchema = new mongoose.Schema({
 		email: String,
 		name: String
   }
-  // twitter: {
-	// 	id: String,
-	// 	token: String,
-	// 	email: String,
-	// 	name: String
-	// }
 });
 
 const User = mongoose.model('User', UserSchema);
