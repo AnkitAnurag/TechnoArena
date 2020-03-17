@@ -86,7 +86,7 @@ module.exports = function(passport) {
           if(err)
             return done(err);
           if(user){
-            console.log(user.name);
+            console.log(user);
             return done(null, user);}
           else {
             var newUser = new User();
