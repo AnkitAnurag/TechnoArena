@@ -29,7 +29,7 @@
       <% if(!currentUser){ %>
         <a class="nav-item nav-link" id="navitem" href="/login">Login</a>
         <% } else { %>
-        <a class="nav-item nav-link" id="navitem" href="#">Logged In As <%= currentUser.name %></a>
+        <a class="nav-item nav-link" id="navitem" href="#">Logged In As <%= user.name %></a>
         <a class="nav-item nav-link" id="navitem" href="/logout">Logout</a>
         <% } %>
       </div>

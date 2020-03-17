@@ -86,8 +86,7 @@ module.exports = function(passport) {
           if(err)
             return done(err);
           if(user)
-            console.log(user);
-            // return done(null, user);
+            return done(null, user);
           else {
             var newUser = new User();
             newUser.google.id = profile.id;
