@@ -108,10 +108,29 @@ html {
     margin-right: 100px;
 }
 
+.column{
+	width:auto;
+	height:auto;
+	margin-top: 5%;
+	margin-left: 6%;
+	margin-bottom: auto;
+	margin-right: 5%;
+}
+
+.column.devcol{
+	width:auto;
+	height:auto;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-bottom: auto;
+	margin-right: 2%;
+}
+
 @media only screen and (max-width: 600px){
 	.left{
 		display: none;
 	}
+
 	.right{
 		position: absolute;
 		margin-left: 0%;
@@ -119,6 +138,7 @@ html {
 		height: 100%;
 		background-color: rgb(247, 133, 162, 0.5);
 	}
+
 	#mainHeaderDev{
 		margin-top: 20%;
 		margin-left: 20%;
@@ -127,36 +147,38 @@ html {
 		letter-spacing: -1px;
 		font-size: 45px;
 	}
+
+	.column{
+		width:auto;
+		height:auto;
+		margin-left: 24%;
+	}
+
 	.column.devcol{
 		width:auto;
 		height:auto;
 		margin-left: 24%;
 	}
+
 	#mainDev1{
 		margin-right: 98px;
 	}
+
 	#mainDev2{
 		margin-right: 44px;
 	}
+
 	.dev2 {
 		width: 135px;
 		height: 135px;
 		margin-right: 15%;
 	}
+	
 	.dev3 {
 		width: 135px;
 		height: 135px;
 		margin-right: auto;
 	}
-}
-
-.column{
-	width:auto;
-	height:auto;
-	margin-top: 5%;
-	margin-left: auto;
-	margin-bottom: auto;
-	margin-right: auto;
 }
 
 .row{
