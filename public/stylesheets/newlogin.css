@@ -231,7 +231,126 @@ span{
   font-weight: 400;
   font-size: 15px;
   transition: 0.2s ease;
-	color:#16a085;
+  color:#16a085;
+}
+
+.or {
+	position: absolute;
+	top: 180px;
+	left: 280px;
+	width: 40px;
+	height: 40px;
+	background: #de5246;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	line-height: 40px;
+	text-align: center;
+}
+  
+.right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	box-sizing: border-box;
+	padding: 40px;
+	width: 300px;
+	height: 400px;
+	background: url('https://static.vecteezy.com/system/resources/previews/000/108/317/large_2x/free-everest-pattern-3-vector.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 0 2px 2px 0;
+}
+
+button.social-signin {
+	margin-bottom: 20px;
+	width: 220px;
+	height: 36px;
+	border: none;
+	font-size: 16px;
+	border-radius: 6px;
+	color: #FFF;
+	font-family: 'Product Sans', sans-serif;
+	font-weight: 500;
+	transition: 0.2s ease;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+	#username, #email, #password1, #password2 {
+		display: block;
+		box-sizing: border-box;
+		margin-bottom: 20px;
+		padding: 5px;
+		width: 125px;
+		height: 50px;
+		border: none;
+		border-bottom: 1px solid #AAA;
+		font-family: 'Product Sans', sans-serif;
+		font-weight: 400;
+		font-size: 15px;
+		transition: 0.2s ease;
+		color:#16a085;
+	}
+	.left {
+		position: absolute;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		padding: 10px;
+		width: 180px;
+		height: 400px;
+	}
+	.right {
+		position: absolute;
+		top: 0;
+		left: 175px;
+		box-sizing: border-box;
+		padding: 30px;
+		width: 235px;
+		height: 400px;
+		background: url(https://static.vecteezy.com/system/resources/previews/000/108/317/large_2x/free-everest-pattern-3-vector.jpg);
+		background-size: cover;
+		background-position: center;
+		border-radius: 0 2px 2px 0;
+	}
+	.or {
+		position: absolute;
+		top: 180px;
+		left: 150px;
+		width: 40px;
+		height: 40px;
+		background: #de5246;
+		border-radius: 50%;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		line-height: 40px;
+		text-align: center;
+	}
+	button.social-signin {
+		margin-bottom: 20px;
+		width: 180px;
+		height: 40px;
+		border: none;
+		font-size: 16px;
+		border-radius: 6px;
+		color: #FFF;
+		font-family: 'Product Sans', sans-serif;
+		font-weight: 500;
+		transition: 0.2s ease;
+		cursor: pointer;
+	}
+	#login-box {
+		position: relative;
+		width: 400px;
+		height: 400px;
+		border-radius: 2px;
+		background-color: rgba(255,255,255,.9);
+	}
+	.modal-title {
+		font-size: 35px;
+		font-weight: bold;
+		color: #1D135c;
+		padding-left: 120px;
+	}
 }
 
 input[type="submit"] {
@@ -262,53 +381,12 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.or {
-  position: absolute;
-  top: 180px;
-  left: 280px;
-  width: 40px;
-  height: 40px;
-  background: #de5246;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
-}
-
-.right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  box-sizing: border-box;
-  padding: 40px;
-  width: 300px;
-  height: 400px;
-  background: url('https://static.vecteezy.com/system/resources/previews/000/108/317/large_2x/free-everest-pattern-3-vector.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 2px 2px 0;
-}
-
 .right .loginwith {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
   color: #000000;
   text-align: center;
-}
-
-button.social-signin {
-  margin-bottom: 20px;
-  width: 220px;
-  height: 36px;
-  border: none;
-  font-size: 16px;
-  border-radius: 6px;
-  color: #FFF;
-  font-family: 'Product Sans', sans-serif;
-  font-weight: 500;
-  transition: 0.2s ease;
-  cursor: pointer;
 }
 
 button.social-signin:hover,
