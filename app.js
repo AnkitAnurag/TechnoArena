@@ -16,6 +16,7 @@ var indexRoutes = require("./routes/index");
 var UserRoutes = require("./routes/users");
 
 const Posts = require('./models/posts');
+const DevData = require('./models/devicedata');
 
 
 app.use(bodyParser.urlencoded({extended:true}));
