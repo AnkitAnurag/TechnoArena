@@ -118,7 +118,7 @@ router.get('/autocomplete/', function(req, res, next) {
 
     var regex= new RegExp(req.query["term"],'i');
    
-    var devFilter = DevData.find({devname:regex},{'devname':1}).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
+    var devFilter = DevData.find({devname:regex},{'devname':1}).sort({"updated_at":-1}).sort({"created_at":-1}).limit(6);
     devFilter.exec(function(err,data){
   
   var result=[];
