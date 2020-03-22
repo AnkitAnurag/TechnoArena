@@ -46,4 +46,26 @@ html {
 
 .container-fluid {
      float:left;
+}
+
+#searchName{
+    height: 35px;
+    width: 400px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: black;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 700px){
+  #searchName{
+    height: 35px;
+    width: 350px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: black;
+    padding-left: 10px;
+    margin-top: 10px;
   }
+}
