@@ -14,11 +14,11 @@ router.get("/aboutus", function(req, res){
 	res.render("aboutus");
 });
 
-router.get("/latestnews/new",function(req,res){
+router.get("/latestnews/new", isLoggedIn, function(req,res){
 	res.render("addnews", {moment: moment});
 });
 
-router.post("/latestnews",isLoggedIn,function(req, res){
+router.post("/latestnews", isLoggedIn, function(req, res){
     var source = req.body.source;
 	var name = req.body.name;
 	var image = req.body.image;
@@ -40,7 +40,7 @@ router.post("/latestnews",isLoggedIn,function(req, res){
 
 //News Page
 
-router.get("/news",function(req,res){
+router.get("/news", isLoggedIn, function(req,res){
     Posts.find({}).sort('-date').exec(function(err, posts){
         if(err){
             console.log(err);
@@ -52,7 +52,7 @@ router.get("/news",function(req,res){
 });
 
 
-router.get("/news/:id",function(req,res){
+router.get("/news/:id", isLoggedIn, function(req,res){
 	Promise.all([
 		Posts.findById(req.params.id),
 		Posts.find({})
@@ -68,7 +68,7 @@ router.get("/search", function(req,res){
     res.render("searchhome");
 });
 
-router.post("/brand/:brand/:id", function(req,res){
+router.post("/brand/:brand/:id", isLoggedIn, function(req,res){
     var devname = req.body.devname;
         Promise.all([
             DevData.findOne({devname:devname})
@@ -101,7 +101,7 @@ router.post("/brand/:brand/:id", function(req,res){
     // })
 });
 
-router.get("/brand/:brand/:id",function(req,res){
+router.get("/brand/:brand/:id", isLoggedIn, function(req,res){
     Promise.all([
         DevData.findById(req.params.id)
     ]).then(([device])=>{
@@ -144,7 +144,7 @@ router.get('/autocomplete/', function(req, res, next) {
   
 
 //Featured Brands Routes
-router.get("/brand/OnePlus",function(req,res){
+router.get("/brand/OnePlus", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"OnePlus"}),
         Posts.find({})
@@ -154,7 +154,7 @@ router.get("/brand/OnePlus",function(req,res){
     });
 });
 
-router.get("/brand/Xiaomi",function(req,res){
+router.get("/brand/Xiaomi", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Xiaomi"}),
         Posts.find({})
@@ -164,7 +164,7 @@ router.get("/brand/Xiaomi",function(req,res){
     });
 });
 
-router.get("/brand/IPhone",function(req,res){
+router.get("/brand/IPhone", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"iPhone"}),
         Posts.find({})
@@ -174,7 +174,7 @@ router.get("/brand/IPhone",function(req,res){
     });
 });
 
-router.get("/brand/Huawei",function(req,res){
+router.get("/brand/Huawei", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Huawei"}),
         Posts.find({})
@@ -184,7 +184,7 @@ router.get("/brand/Huawei",function(req,res){
     });
 });
 
-router.get("/brand/Samsung",function(req,res){
+router.get("/brand/Samsung", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Samsung"}),
         Posts.find({})
@@ -194,7 +194,7 @@ router.get("/brand/Samsung",function(req,res){
     });
 });
 
-router.get("/brand/Oppo",function(req,res){
+router.get("/brand/Oppo", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Oppo"}),
         Posts.find({})
@@ -204,7 +204,7 @@ router.get("/brand/Oppo",function(req,res){
     });
 });
 
-router.get("/brand/Asus",function(req,res){
+router.get("/brand/Asus", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Asus"}),
         Posts.find({})
@@ -214,7 +214,7 @@ router.get("/brand/Asus",function(req,res){
     });
 });
 
-router.get("/brand/Realme",function(req,res){
+router.get("/brand/Realme", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Realme"}),
         Posts.find({})
@@ -224,7 +224,7 @@ router.get("/brand/Realme",function(req,res){
     });
 });
 
-router.get("/brand/Vivo",function(req,res){
+router.get("/brand/Vivo", isLoggedIn, function(req,res){
     Promise.all([
         DevData.find({brand:"Vivo"}),
         Posts.find({})
@@ -241,6 +241,8 @@ function isLoggedIn(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
     }
+    req.flash("error", "You need to be logged in to do that!");
+	res.redirect("/login");
 }
 
 module.exports = router;
