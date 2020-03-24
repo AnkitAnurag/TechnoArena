@@ -54,15 +54,15 @@ html {
   }
 
 #property{
-    width: 20%;
-    padding-bottom: 18px;
-    padding-right: 10px;
+  width: 20%;
+  padding-bottom: 18px;
+  padding-right: 10px;
 }
 
 #back{
   font-size:18px;
   color: black;
-  margin-top:24px;
+  margin-top:40px;
   border-radius: 4px;
   border: 1px solid black;
   margin-left:15px;

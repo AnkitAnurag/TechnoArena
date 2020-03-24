@@ -68,14 +68,15 @@ router.get("/search", function(req,res){
     res.render("searchhome");
 });
 
-router.post("/device/:id", function(req,res){
+router.post("/brand/:brand/:id", function(req,res){
     var devname = req.body.devname;
         Promise.all([
             DevData.findOne({devname:devname})
         ]).then(([device])=>{
             var id=device._id;
+            var brand=device.brand;
             //console.log(id);
-            res.redirect("/device/"+id);   
+            res.redirect("/brand/"+brand+"/"+id);   
         });
     
     // DevData.findOne({devname:devname},function(err,devData){
@@ -100,7 +101,7 @@ router.post("/device/:id", function(req,res){
     // })
 });
 
-router.get("/device/:id",function(req,res){
+router.get("/brand/:brand/:id",function(req,res){
     Promise.all([
         DevData.findById(req.params.id)
     ]).then(([device])=>{
@@ -142,7 +143,100 @@ router.get('/autocomplete/', function(req, res, next) {
   });
   
 
+//Featured Brands Routes
+router.get("/brand/OnePlus",function(req,res){
+    Promise.all([
+        DevData.find({brand:"OnePlus"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FOnePlus.png?alt=media&token=586a43db-8533-4e46-a470-29926313ca2a"};
+            res.render("brandpage",{branddata:brand,news:news,brand,image:brandimg});       
+    });
+});
+
+router.get("/brand/Xiaomi",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Xiaomi"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FXiaomi.png?alt=media&token=9616cc8c-eac7-4d2a-9a81-9df45dd2a4ea"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/IPhone",function(req,res){
+    Promise.all([
+        DevData.find({brand:"iPhone"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FiPhone.png?alt=media&token=65dadefe-c955-456e-af45-1c6a39ecf398"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Huawei",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Huawei"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FHuawei.png?alt=media&token=8001bb9d-b4e6-4784-861b-e9f37f5d85ec"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Samsung",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Samsung"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FSamsung.png?alt=media&token=d0f2c952-f639-4c81-80c7-e33025ff433a"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Oppo",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Oppo"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FOppo.png?alt=media&token=b2eb798d-04f6-43d9-8b6d-812e60bc311b"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Asus",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Asus"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FAsus.png?alt=media&token=357956a7-2b38-4976-8114-04aed5b553dd"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Realme",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Realme"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FRealme.png?alt=media&token=f767ed9c-33eb-4746-a15f-051872307e7c"};
+            res.render("brandpage",{branddata:brand,news:news,image:brandimg});       
+    });
+});
+
+router.get("/brand/Vivo",function(req,res){
+    Promise.all([
+        DevData.find({brand:"Vivo"}),
+        Posts.find({})
+    ]).then(([brand,news])=>{
+            var brandimg={brandimage:"https://firebasestorage.googleapis.com/v0/b/technoarenamobile.appspot.com/o/WebsiteAssets%2FBrand%20Images%2FVivo.png?alt=media&token=0f964bee-0180-4efa-b390-9cb1e69023af"};
+            res.render("brandpage",{branddata:brand,news:news,brand,image:brandimg});       
+    });
+});
+
+
 //Authentication Middleware
+
 function isLoggedIn(req, res, next){
 	if(req.isAuthenticated()){
 		return next();

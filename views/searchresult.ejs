@@ -3,7 +3,14 @@
     <div class="col col-lg-9">
     <div class="container"  style="background-color:white; border-radius: 3px;">
         <div class="container">
-            <h1 style="font-size:40px; color:black; margin-left:20px;  margin-top:10px"><%=device.devname%></h1>
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1 style="font-size:40px; color:black; margin-left:20px;  margin-top:10px"><%=device.devname%></h1>
+                </div>
+                <div class="col-lg-2">
+                    <a href="/search"><button id="back"><i class="fa fa-arrow-circle-left"></i> Go Back</button></a>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="row" style="margin-top:10px;">
@@ -94,17 +101,17 @@
                 <h2 style="text-align: center; margin-top: 10px; margin-bottom: 10px; font-size: 30px;">More from <%=device.brand%></h2>
                 
                 <%for(var i=alldev.length; i>(alldev.length-8); i--){%>
-                <div class="row" style="height:150px; align:center;">
+                <div class="row" style="height:150px; text-align:center;">
                 <div class="col col-lg-6">
                 <div class="thumbnail" style=" height:140px; width:100px; margin-left:20px;">
                     <img class="img-responsive" src="<%=alldev[i-1].devimg%>" style="width:70px; height:95px;"><hr>
-					<h4 style="font-size:10px; text-align: center; margin-top:-6px;"><a href="/device/<%=alldev[i-1]._id%>"><%=alldev[i-1].devname%></a></h4>	
+					<h4 style="font-size:10px; text-align: center; margin-top:-6px;"><a href="/brand/<%=alldev[i-1].brand%>/<%=alldev[i-1]._id%>"><%=alldev[i-1].devname%></a></h4>	
 				</div>
                 </div>
                 <div class="col col-lg-6">
                 <div class="thumbnail" style="height:140px; width:100px;">
                     <img class="img-responsive" src="<%=alldev[i-2].devimg%>" style="width:70px; height:95px;"><hr>
-					<h4 style="font-size:10px; text-align: center; margin-top:-6px;"><a href="/device/<%=alldev[i-2]._id%>"><%=alldev[i-2].devname%></a></h4>	
+					<h4 style="font-size:10px; text-align: center; margin-top:-6px;"><a href="/brand/<%=alldev[i-2].brand%>/<%=alldev[i-2]._id%>"><%=alldev[i-2].devname%></a></h4>	
 				</div>
                 </div>
             </div>

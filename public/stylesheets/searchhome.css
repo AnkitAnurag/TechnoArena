@@ -69,3 +69,15 @@ html {
     margin-top: 10px;
   }
 }
+
+#brandlogo:hover{
+  z-index: 1;
+  transform: scale(1.10);
+  box-shadow: 20px 25px 40px rgba(0,0,0,0.5);
+  transition-duration: 0.5s;
+  border-radius: 5px;
+}
+#brandlogo{
+  transition: transform .5s ease;
+  border-radius: 5px;
+}
