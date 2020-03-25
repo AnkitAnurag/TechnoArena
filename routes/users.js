@@ -87,13 +87,13 @@ router.post('/login', passport.authenticate('local',
 router.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
 
 router.get('/auth/facebook/callback', 
-	  passport.authenticate('facebook', { successRedirect: '/aboutus',
+	  passport.authenticate('facebook', { successRedirect: '/search',
 	                                      failureRedirect: '/login' }));
 
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 router.get('/auth/google/callback', 
-    passport.authenticate('google', { successRedirect: '/aboutus',
+    passport.authenticate('google', { successRedirect: '/search',
                                       failureRedirect: '/login' }));                                 
 
 // Logout
