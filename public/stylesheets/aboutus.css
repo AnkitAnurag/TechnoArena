@@ -186,7 +186,7 @@ html {
 }
 
 .scrollable {
-    height: 80%;
+    height: auto;
     overflow: auto;
 }
 
