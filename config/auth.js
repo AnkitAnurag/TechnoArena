@@ -8,6 +8,6 @@ module.exports = {
 	'googleAuth' : {
 		'clientID': process.env.GOOGLECLIENTID,
 		'clientSecret': process.env.GOOGLECLIENTSECRET,
-		'callbackURL': GOOGLECALLBACKURL
+		'callbackURL': process.env.GOOGLECALLBACKURL
 	}
 }
