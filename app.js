@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -16,6 +18,7 @@ var indexRoutes = require("./routes/index");
 var UserRoutes = require("./routes/users");
 
 const Posts = require('./models/posts');
+const DevData = require('./models/devicedata');
 
 
 app.use(bodyParser.urlencoded({extended:true}));

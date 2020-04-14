@@ -77,7 +77,7 @@ router.post('/register', (req, res) => {
 // Login
 router.post('/login', passport.authenticate('local',
 	{
-    	successRedirect: '/aboutus',
+    	successRedirect: '/search',
     	failureRedirect: '/login',
     	failureFlash: true
   	}), function(req, res){
@@ -87,20 +87,14 @@ router.post('/login', passport.authenticate('local',
 router.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
 
 router.get('/auth/facebook/callback', 
-	  passport.authenticate('facebook', { successRedirect: '/aboutus',
+	  passport.authenticate('facebook', { successRedirect: '/search',
 	                                      failureRedirect: '/login' }));
 
 router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
 
 router.get('/auth/google/callback', 
-    passport.authenticate('google', { successRedirect: '/aboutus',
-                                      failureRedirect: '/login' }));
-
-router.get('/auth/twitter', passport.authenticate('google', {scope: 'email'}));
-
-router.get('/auth/twitter/callback', 
-    passport.authenticate('twitter', { successRedirect: '/aboutus',
-                                      failureRedirect: '/login' }));                                    
+    passport.authenticate('google', { successRedirect: '/search',
+                                      failureRedirect: '/login' }));                                 
 
 // Logout
 router.get('/logout', (req, res) => {
