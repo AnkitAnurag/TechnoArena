@@ -1,39 +1,81 @@
 <%- include("partials/newsheader") %>
-<div class="container newssection">
-  <div class="jumbotron jumbotron-fluid">
-    <h2 class="display-2" style="color:#000000; margin-top:-10px;">Latest News</h2>
-    <div class="container">
-        <div class="row" style="margin-top: 30px; margin-left: auto;">
-            <div class="col-lg-12 ">
-            <% for(var i=0; i<posts.length ; i++){ %>
-            <%if(i<6){%>
-            <div class="img__wrap" style="margin-top:-20px;">
-                <img src="<%=posts[i].image%>" class="image">
-                <div class="img__description_layer">
-                <p class="img__description"><a href="/news/<%=posts[i]._id%>" id="toDisplay"><%=posts[i].name%></a></p>
+<section class="container" style="padding-top: 65px;">
+      <div class="news-section">
+        <h1 style="font-size: 45px; color: #0f1b5a; margin-bottom:15px">
+          <strong>Latest</strong> <span>News</span>
+        </h1>
+        <div class="row">
+          <div class="col-sm-8">
+              <div class="box">
+                <div class="imgBox"> 
+                    <img src="<%=posts[0].image%>" class="img-responsive" style="width:730px; height:455px ; border-radius: 10px;">
                 </div>
+                <div class="content">
+                    <a href="/news/<%=posts[0]._id%>"><%=posts[0].name%></a>
+                </div> 
+              </div>  
+          </div>
+          <div class="col-sm-4"">
+            <div class="row" style="margin-bottom: 5px;">
+                <div class="box-small">
+                    <div class="imgBox"> 
+                        <img src="<%=posts[1].image%>" class="img-responsive" >
+                    </div>
+                    <div class="content">
+                        <a href="/news/<%=posts[1]._id%>"><%=posts[1].name%></a>
+                    </div> 
+                  </div> 
             </div>
-            <%}%>
-            <%}%>  
+            <div class="row">
+                <div class="box-small">
+                    <div class="imgBox"> 
+                        <img src="<%=posts[2].image%>" class="img-responsive" >
+                    </div>
+                    <div class="content">
+                        <a href="/news/<%=posts[2]._id%>"><%=posts[2].name%></a>
+                    </div> 
+                </div> 
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-lg-12">
+            <% for(var i=3; i<6 ; i++){ %>
+                <div class="box-small-2">
+                    <div class="imgBox"> 
+                        <img src="<%=posts[i].image%>" class="img-responsive" >
+                    </div>
+                    <div class="content">
+                        <a href="<%=posts[i]._id%>"><%=posts[i].name%></a>
+                    </div> 
+                </div>
+            <% } %>
+            </div>
+        </div>
+        <h1 style="font-size: 45px; color: #0f1b5a; margin-top:30px; margin-bottom:15px">
+            <strong>Recent</strong> <span>News</span>
+          </h1>
+        <div class="newsdata" style="margin-top: 10px;">
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-12">
+                <% for(var i=6; i<posts.length ; i++){ %>
+                    <div class="content" style="margin-bottom: 10px; background-color: azure; padding: 10px; border-left: 7px solid #0f1b5a;">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <img src="<%=posts[i].image%>" style="width:260px; height:180px; border-radius: 5px;">
+                            </div>
+                            <div class="col-sm-9">
+                                <h3 style="color: black; font-size: 30px; margin-top:-5px;"><strong><%=posts[i].name%></strong></h3>
+                                <p style="color: black; font-size: 18px ;margin-top:-5px;" id="recentdesc"><%=posts[i].description%></p>
+                                <a class="btn btn-danger" style=" margin-top: -5px;" href="/news/<%=posts[i]._id%>">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                <%}%>
+                </div>
             </div>
         </div>
       </div>
-    </div>
-    <h2 style="color: #FFFFFF; font-size: 40px; font-weight: bold; margin-top: 50px; margin-bottom:15px;">Recent News</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-            <% for(var i=3; i<posts.length ; i++){%>
-                <div class="content">
-                    <img src="<%=posts[i].image%>" class="recentimages" style="float:left; margin-right:20px; margin-top: auto;">
-                        <h3 style="color: black; font-size: 30px;"><strong><%=posts[i].name%></strong></h3> 
-                        <p style="color: black; font-size: 13px;" class="date">Created on <i><%=posts[i].date%></i></p>
-                        <p style="color: black;" id="recentdesc"><%=posts[i].description%></p>
-                        <a class="btn btn-danger" style=" margin-top: -10px;" href="/news/<%=posts[i]._id%>">Read more</a>
-                    </div>
-            <%}%>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
+
 <%- include("partials/newsfooter") %>
