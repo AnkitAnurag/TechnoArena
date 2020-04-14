@@ -159,3 +159,62 @@ html {
   margin-right: 5px;
 }
 
+.box-small-2 .imgBox {
+  position: relative;
+}
+
+.box-small-2 .imgBox img {
+  width: 363px;
+  height: 260px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.box-small-2:hover .imgBox img {
+  opacity: 0;
+  transform: scale(1.2);
+}
+.box-small-2 .content {
+  position: absolute;
+  opacity: 0;
+  top: 75px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.box-small-2:hover .content {
+  opacity: 1;
+  top: 75px;
+}
+.box-small-2 .content a {
+  font-size: 18px;
+  font-style: bold;
+  color: #ffffff;
+}
+
+#recentdesc {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 85px;
+  text-align: justify;
+  margin-top: -10px;
+  margin-right: 5px;
+  padding-right: 1em;
+}
+#recentdesc:before {
+  content: '...';
+  position: absolute;
+  margin-right: 0px;
+  right: 0;
+  bottom: 0;
+}
+#recentdesc:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-right: 0px;
+  margin-top: 0.2em;
+  background: white;
+}
