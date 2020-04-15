@@ -51,13 +51,13 @@ router.get("/news", isLoggedIn, function(req,res){
     });
 });
 
+//Display page of news
 
 router.get("/news/:id", isLoggedIn, function(req,res){
 	Promise.all([
 		Posts.findById(req.params.id),
-		Posts.find({})
+		Posts.find({}).sort('-date')
 	]).then(([posts,news])=>{
-		//console.log("Posts=====>"+posts+"News =====>"+news);
 		res.render("displaypage",{posts:posts,news:news})
 	});
 });

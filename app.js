@@ -33,7 +33,7 @@ app.use(methodOverride('_method'));
 require('./config/passport')(passport);
 
 
-var url = process.env.DATABASEURL || "mongodb+srv://varun2000:varun2000@webdev-sdnkq.mongodb.net/techno_v1?retryWrites=true&w=majority"
+var url = process.env.DATABASEURL;
 
 mongoose.connect(url,{
 	useNewUrlParser: true,
@@ -69,6 +69,12 @@ app.use(
     saveUninitialized: true
   })
 );
+
+// Back button cached sessions destroy
+app.use(function(req, res, next) {
+  res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
+  next();
+});
 
 // Passport middleware
 app.use(passport.initialize());
