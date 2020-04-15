@@ -51,7 +51,6 @@ router.get("/news", isLoggedIn, function(req,res){
     });
 });
 
-<<<<<<< HEAD
 //Display page of news
 
 router.get("/news/:id", isLoggedIn, function(req,res){
@@ -61,16 +60,6 @@ router.get("/news/:id", isLoggedIn, function(req,res){
 	]).then(([posts,news])=>{
 		res.render("displaypage",{posts:posts,news:news})
 	});
-=======
-//Display Page of News
-router.get('/news/:id', function (req, res) {
-  Promise.all([
-    Posts.findById(req.params.id),
-    Posts.find({}).sort('-date'),
-  ]).then(([posts, news]) => {
-    res.render('displaypage', { posts: posts, news: news });
-  });
->>>>>>> 4254c59fe6f7a39c91483cd92191c84e49457b48
 });
 
 //SEARCH PAGE
