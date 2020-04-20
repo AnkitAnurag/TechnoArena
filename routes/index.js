@@ -40,7 +40,7 @@ router.post("/latestnews", isLoggedIn, function(req, res){
 
 //News Page
 
-router.get("/news", isLoggedIn, function(req,res){
+router.get("/news", function(req,res){
     Posts.find({}).sort('-date').exec(function(err, posts){
         if(err){
             console.log(err);
